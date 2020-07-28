@@ -1,0 +1,19 @@
+/* 布局头部设置 */
+.ant-layout-header{
+    color:#fff !important;
+    font-size:23px;
+    font-family: "幼圆";
+    font-weight: bolder;
+}
+/* 按钮设置 */
+.ant-btn-primary{
+    width: 165px;
+}
+/* 表单设置 */
+.ant-form{
+    margin: 80px !important;
+
+}
+.ant-input{
+    /* height: 35px; */
+}
