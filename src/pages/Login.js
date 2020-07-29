@@ -7,10 +7,12 @@ import './Login.css'
 //引入entd布局
 import { Layout, Form, Input, Button, Checkbox } from 'antd';
 // import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
+import {inject,observer} from 'mobx-react';
 
 const { Header, Footer, Content } = Layout;
+@inject('user')
 
-
+@observer
 class Login extends Component {
 
     render() {
@@ -24,6 +26,16 @@ class Login extends Component {
 
         const onFinish = values => {
             console.log('Success:', values);
+            this.props.user.login()
+            .then((resp)=>{
+              console.log(resp);
+              this.props.history.push("/home")
+              
+            })
+            .catch((err)=>{
+               console.log(err);
+               
+            })
         };
 
         const onFinishFailed = errorInfo => {

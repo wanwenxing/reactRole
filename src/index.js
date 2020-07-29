@@ -5,9 +5,15 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import "antd/dist/antd.css"
 
+//引入store
+import store from "./store"
+//引入mbox-react
+import { Provider} from 'mobx-react'
 ReactDOM.render(
- 
-    <App />,
+  <Provider {...store}>
+    <App />
+  </Provider>
+  ,
   document.getElementById('root')
 );
 
